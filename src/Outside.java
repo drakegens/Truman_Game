@@ -18,6 +18,7 @@ public class Outside extends Room{
 	}
 	
 	public void encounter() {
+		Zombie zombie = new Zombie("zomb");
 		
 	}
 }
