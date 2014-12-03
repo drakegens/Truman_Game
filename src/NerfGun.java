@@ -4,8 +4,11 @@ public class NerfGun extends Item {
 	private int power;
 	private int accuracy;
 	private String name;
-	public NerfGun(String description) {
+	public NerfGun(String description, String n, int a, int p) {
 		super(description);
+		name = n;
+		accuracy = a;
+		power = p;
 		// TODO Auto-generated constructor stub
 	}
 
