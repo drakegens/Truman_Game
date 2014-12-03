@@ -1,3 +1,4 @@
+
 /**
  * 
  * @author Seth Martin
@@ -17,3 +18,4 @@ public class Quest {
 		
 	}
 }
+
