@@ -11,4 +11,8 @@ public abstract class Item {
 		{this.description = description;
 	
 		}
+	
+	public String getDesc() {
+		return description;
+	}
 }

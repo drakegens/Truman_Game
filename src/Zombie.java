@@ -18,8 +18,8 @@ public class Zombie extends NPC{
 		return health;
 	}
 	
-	public void changeTurns(int newTurns) {
-		turns = newTurns;
+	public void changeTurns(int changeTurns) {
+		turns = turns - changeTurns;
 	}
 	
 	public void changeHealth(int changeHealth) {
