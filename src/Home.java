@@ -5,15 +5,15 @@ public class Home extends Room {
 
 	public void start() {
 		System.out.println("You are at home. There is a computer, a bed, and 3 textbooks. You can: \n"
-				+ "Go to Violett Hall. \n"
+				+ "Go to Violet Hall. \n"
 				+ "Pick up Textbooks. \n"
 				+ "You choose to: ");
 		Scanner in = new Scanner(System.in);
-		String response = in.nextLine();
 		boolean valid = false;
 		boolean gotten = false;
 		while (valid = false){
-			if (response == "Go to Violett Hall.") {
+			String response = in.nextLine();
+			if (response == "Go to Violet Hall.") {
 				valid = true;
 			}
 			else if (response == "Pick up Textbooks.") {
@@ -21,9 +21,20 @@ public class Home extends Room {
 					gotten = true;
 					//finish later
 				}
+				else {
+					System.out.println("You have already gotten the Textbooks. You choose to: ");
+				}
 			}
 			else {
-				System.out.println("Invalid response. You choose to: ");
+				System.out.println("Invalid response.");
+			}
+			if (valid == false) {
+				System.out.println("You can: ");
+				System.out.println("Go to Violet Hall.");
+				if (gotten == false) {
+					System.out.println("Pick up Textbooks.");
+				}
+				System.out.println("You choose to: ");
 			}
 		}
 		Outside encounter = new Outside();
