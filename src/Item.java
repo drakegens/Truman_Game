@@ -1,7 +1,8 @@
+
 /**
  * 
  * @author Seth Martin
- * @version 12/2
+ * @version 12/3
  */
 public abstract class Item {
 
@@ -16,3 +17,4 @@ public abstract class Item {
 		return description;
 	}
 }
+

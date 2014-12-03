@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -98,3 +97,4 @@ public class Outside extends Room{
 		return player;	
 	}
 }
+

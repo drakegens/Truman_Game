@@ -1,4 +1,4 @@
-
+//Updated
 import java.util.ArrayList;
 
 
@@ -54,4 +54,4 @@ public class Inventory {
 		eqPow = n.getPower();
 	}
 }
-
+ 

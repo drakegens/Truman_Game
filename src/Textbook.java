@@ -1,3 +1,4 @@
+
 /**
  * 
  * @author Seth Martin
@@ -9,3 +10,4 @@ public class Textbook extends KnowledgeItem {
 		super(description, knowledge);
 	}
 }
+

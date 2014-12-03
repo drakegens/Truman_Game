@@ -17,4 +17,7 @@ public boolean answerQuestion(char a){
 	if (answer == a){ return true;}
 	else {return false;}
 }
+public String getChoices(int i){
+	return choices.get(i);
+}
 }

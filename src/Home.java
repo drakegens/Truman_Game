@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-
+ 
 public class Home extends Room {
 
 	public void start(Player player) {
