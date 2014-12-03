@@ -5,7 +5,7 @@
  */
 public class Flashdrive extends KnowledgeItem {
 
-	public Flashdrive(String description, String knowledge) {
+	public Flashdrive(String description, int knowledge) {
 		super(description, knowledge);
 		// TODO Auto-generated constructor stub
 	}

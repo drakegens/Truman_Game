@@ -13,8 +13,9 @@ public class Quest {
 	private boolean amuletOfYendor = false;
 	
 	public static void main() {
+		Player player = new Player();
 		Home home = new Home();
-		home.start();
+		home.start(player);
 		
 	}
 }

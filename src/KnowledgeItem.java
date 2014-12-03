@@ -5,9 +5,9 @@
  */
 public class KnowledgeItem extends Item {
 
-	private String knowledge;
+	private int knowledge;
 	
-	public KnowledgeItem(String description, String knowledge) {
+	public KnowledgeItem(String description, int knowledge) {
 		super(description);
 		// TODO Auto-generated constructor stub
 		{this.knowledge = knowledge;

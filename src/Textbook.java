@@ -5,7 +5,7 @@
  */
 public class Textbook extends KnowledgeItem {
 
-	public Textbook(String description, String knowledge) {
+	public Textbook(String description, int knowledge) {
 		super(description, knowledge);
 	}
 }

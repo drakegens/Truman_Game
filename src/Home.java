@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Home extends Room {
 
-	public void start() {
+	public void start(Player player) {
 		System.out.println("You are at home. There is a computer, a bed, and 3 textbooks. You can: \n"
 				+ "Go to Violet Hall. \n"
 				+ "Pick up Textbooks. \n"
@@ -16,6 +16,10 @@ public class Home extends Room {
 			String response = in.nextLine();
 			if (response == "Go to Violet Hall.") {
 				valid = true;
+				System.out.println("It's Humans vs. Zombies at Truman right now, so you pick up your nerf pistol and 25 nerf darts on your way out.");
+				NerfGun nerfPistol = new NerfGun("Nerf Pistol. It has 17 accuracy, and 15 power.", "Nerf Pistol", 17, 15);
+				player.addItem(nerfPistol);
+				//finish later
 			}
 			else if (response == "Pick up Textbooks.") {
 				if (gotten == false) {
@@ -39,7 +43,7 @@ public class Home extends Room {
 			}
 		}
 		Outside encounter = new Outside();
-		encounter.encounter();
+		encounter.encounter(player);
 		VioletHall next = new VioletHall();
 		next.firstLecture();
 	}
