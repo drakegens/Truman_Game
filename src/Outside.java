@@ -16,4 +16,8 @@ public class Outside extends Room{
 	public Outside() {
 		weather = 4 *(int) Math.random();
 	}
+	
+	public void encounter() {
+		
+	}
 }
