@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * 
+ *  
  * @author Seth Martin
  * @version 12/2
  */
