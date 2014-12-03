@@ -1,3 +1,4 @@
+
 /**
  * 
  * @author Seth Martin
@@ -12,6 +13,9 @@ public class Quest {
 	private boolean amuletOfYendor = false;
 	
 	public static void main() {
+		Home home = new Home();
+		home.start();
 		
 	}
 }
+
