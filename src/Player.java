@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Player {
 
 	private Inventory inv = new Inventory();
+	private int knowledge = 100;
 	
 	public ArrayList<Item> getInv() {
 		return inv.getInv();
@@ -19,5 +20,13 @@ public class Player {
 	
 	public void removeItem(Item item) {
 		inv.remItem(item);
+	}
+	
+	public int getKnowledge() {
+		return knowledge;
+	}
+	
+	public void addKnowledge(int x) {
+		knowledge = knowledge + x;
 	}
 }
