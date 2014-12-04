@@ -61,6 +61,10 @@ public class Player {
 		return inv.getNerfGuns();
 	}
 	
+	public ArrayList<Item> getInv() {
+		return inv.getInv();
+	}
+	
 	// Mutators
 	public void changeGun(NerfGun n) {
 		inv.equip(n);

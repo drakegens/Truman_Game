@@ -86,6 +86,8 @@ public class VioletHall {
 			}
 			else {invalidResponse();}
 		}
+		Outside encounter = new Outside();
+		player = encounter.encounter(player);
 		return player;
 	}
 	

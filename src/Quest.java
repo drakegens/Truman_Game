@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 
 /**
  * 
@@ -11,6 +13,8 @@ public class Quest {
 	private static boolean thirdLecture = false;
 	private static boolean fourthLecture = false;
 	private static boolean amuletOfYendor = false;
+	private static boolean day1 = true;
+	private static boolean visitedCH3251 = false;
 	
 	public static void main() {
 		Player player = new Player();
@@ -18,11 +22,25 @@ public class Quest {
 		home.start(player);
 		VioletHall vh = new VioletHall();
 		player = vh.firstLecture(player);
-		
-	}
-	public void setFirstLecture(){
 		firstLecture = true;
+		String response;
+		Scanner in = new Scanner(System.in);
+		CentenialHall ch = new CentenialHall();
+		while (day1) {
+			System.out.println("Where do you want to go? You can go to... ");
+			if (vh.getSideQuestStart() & !visitedCH3251) {
+				System.out.println("Centenial Hall room 3251");
+			}
+			System.out.println("Home");
+			
+			response = in.nextLine();
+			if (response.equals("Centenial Hall room 3251") & vh.getSideQuestStart() & !visitedCH3251) {
+				visitedCH3251 = true;
+				ch.room3251(player);
+			}
+		}
 	}
+	
 	public void setSecondLecture(){
 		secondLecture = true;
 	}
