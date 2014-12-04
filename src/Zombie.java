@@ -6,7 +6,7 @@ public class Zombie extends NPC{
 
 	public Zombie(String name){
 		super(name);
-		turns = 5 * (int) Math.random() + 7;
+		turns = (int) (5.0 *  Math.random()) + 7;
 		health = 100;
 	}
 

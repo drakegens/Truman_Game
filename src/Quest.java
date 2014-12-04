@@ -34,7 +34,7 @@ public class Quest {
 			System.out.println("Home");
 			
 			response = in.nextLine();
-			if (response.equals("Centennial Hall room 3251") & vh.getSideQuestStart() & !visitedCH3251) {
+			if (response.equals("Centennial Hall room 3251") && vh.getSideQuestStart() && !visitedCH3251) {
 				visitedCH3251 = true;
 				ch.room3251(player);
 			}
