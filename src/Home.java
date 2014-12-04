@@ -39,7 +39,17 @@ public class Home extends Room {
 		return player;
 	}
 	
-	public Player firstNight(Player player) {
+	public Player secondDay(Player player) {
+		player = night(player);
+		System.out.println("You wake up in the morning. \n"
+				+ "You discover you have slept in. \n"
+				+ "You have class in 30 minutes. \n"
+				+ "You rush out the door after grabbing 10 more darts.");
+		player.changeDarts(10);
+		return player;
+	}
+	
+	public Player night(Player player) {
 		System.out.println("You arrive at your home. You can...");
 		Scanner in = new Scanner(System.in);
 		String response;
@@ -57,8 +67,6 @@ public class Home extends Room {
 				sleep = true;
 			}
 		}
-		Outside encounter = new Outside();
-		player = encounter.encounter(player);
 		return player;
 	}
 	
