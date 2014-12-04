@@ -98,7 +98,7 @@ public class VioletHall {
 	public Player investigateBackpacks(Player player){
 		System.out.println("You find a textbook on computer science. You take the textbook.");
 		Textbook textbook = new Textbook("Big Java", 35);
-		player.addItem(textbook);
+		player.addTextbook(textbook);
 		return player;
 	}
 	

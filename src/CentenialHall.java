@@ -36,7 +36,7 @@ public class CentenialHall {
 				System.out.println("The bed is old. It's barely a thin piece of cloth. Underneath the cloth you find an old, outdated textbook.\n"
 						+ "It doesn't provide much knowledge, but there is some trivia scrawled on the cover.");
 				Textbook textbook = new Textbook("The Truman School colors are purple and white.", 5);//replace text with trivia
-				player.addItem(textbook);
+				player.addTextbook(textbook);
 				investigatedBed = true;
 			}
 			if (response.equals("Investigate the closet") && !investigatedCloset) {
