@@ -10,6 +10,7 @@ public class Inventory {
 	private int eqAcc;
 	private int eqPow;
 	private ArrayList<Item> inv = new ArrayList<Item>();
+	private ArrayList<NerfGun> gunInv = new ArrayList<NerfGun>();
 	
 	public ArrayList<Item> getInv() {
 		return inv;
@@ -21,6 +22,10 @@ public class Inventory {
 	
 	public void remItem(Item item) {
 		inv.remove(item);
+	}
+	
+	public void addGun(NerfGun gun) {
+		gunInv.add(gun);
 	}
 	
 	public int getDarts() {
@@ -56,9 +61,9 @@ public class Inventory {
 	
 	public ArrayList<NerfGun> getNerfGuns() {
 		ArrayList<NerfGun> nerfGuns = new ArrayList<NerfGun>();
-		for (Item item : inv) {
-			if (item.getIsWeapon() == true) {
-				
+		for (NerfGun gun : gunInv) {
+			if (gun.getIsWeapon() == true) {
+				nerfGuns.add(gun);
 			}
 		}
 		return nerfGuns;

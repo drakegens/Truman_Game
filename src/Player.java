@@ -24,6 +24,10 @@ public class Player {
 		inv.remItem(item);
 	}
 	
+	public void addGun(NerfGun gun) {
+		inv.addGun(gun);
+	}
+	
 	public void addKnowledge(int x) {
 		knowledge = knowledge + x;
 	}
@@ -51,6 +55,10 @@ public class Player {
 	
 	public int getAcc() {
 		return inv.getAcc();
+	}
+	
+	public ArrayList<NerfGun> getGuns () {
+		return inv.getNerfGuns();
 	}
 	
 	// Mutators

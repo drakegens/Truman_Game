@@ -68,7 +68,17 @@ public class Outside extends Room{
 				}
 			}
 			else if (response == "Change weapons.") {
-				
+				System.out.println("What weapon do you want to use? Please input the number of the weapon you want to use.");
+				ArrayList<NerfGun> weapons = new ArrayList<NerfGun>();
+				weapons = player.getGuns();
+				int i = 0;
+				for (NerfGun weapon : weapons) {
+					i++;
+					System.out.println(i + ". " + weapon.getDesc());
+				}
+				int num = in.nextInt() - 1;
+				NerfGun gun = weapons.get(num);
+				player.changeGun(gun);
 			}
 			else {
 				System.out.println("Invalid response.");
