@@ -39,7 +39,7 @@ public class Quest {
 				ch.room3251(player);
 			}
 			if (response.equals("Home")) {
-				player = home.firstNight(player);
+				player = home.secondDay(player);
 			}
 		}
 	}
