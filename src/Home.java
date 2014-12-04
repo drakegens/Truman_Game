@@ -83,6 +83,8 @@ public class Home extends Room {
 					i++;
 					System.out.println(i + ". " + book.getName());
 				}
+				int num = in.nextInt() - 1;
+				
 			}
 			if (response.equals("Use flashdrive.")) {
 				
