@@ -60,13 +60,7 @@ public class Inventory {
 	}
 	
 	public ArrayList<NerfGun> getNerfGuns() {
-		ArrayList<NerfGun> nerfGuns = new ArrayList<NerfGun>();
-		for (NerfGun gun : gunInv) {
-			if (gun.getIsWeapon() == true) {
-				nerfGuns.add(gun);
-			}
-		}
-		return nerfGuns;
+		return gunInv;
 	}
 }
  
