@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class VioletHall {
 
+	private boolean sidequestStart = false; 
+	
 	public Player firstLecture(Player player) {
 		
 		boolean investigatedLaptop = false;
@@ -100,6 +102,9 @@ public class VioletHall {
 				+ ""); //Add in trivia
 	}
 	
+	public boolean getSideQuestStart() {
+		return sidequestStart;
+	}
 
 	public void secondLecture() {
 		
