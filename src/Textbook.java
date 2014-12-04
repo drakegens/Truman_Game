@@ -6,8 +6,14 @@
  */
 public class Textbook extends KnowledgeItem {
 
-	public Textbook(String description, int knowledge) {
+	String name;
+	public Textbook(String n, String description, int knowledge) {
 		super(description, knowledge);
+		name = n;
+	}
+	
+	public String getName() {
+		return name;
 	}
 }
 
