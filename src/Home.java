@@ -65,7 +65,9 @@ public class Home extends Room {
 	private Player study(Player player) {
 		ArrayList<Item> inv = new ArrayList<Item>();
 		inv = player.getInv();
-		
+		System.out.println("What do you want to do? You can... \n"
+				+ "Read textbook. \n"
+				+ "Use flashdrive.");
 		return player;
 	}
 }
