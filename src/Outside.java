@@ -104,16 +104,16 @@ public class Outside extends Room{
 				System.out.println("The zombie has 'died.'");
 				player = loot(player);
 			}
-			if (zombie.getTurns() == 0 && zombie.getHealth() > 0) {
-				ArrayList<Item> items = new ArrayList<Item>();
-				items = player.getInv();
-				int i = items.size() * (int) Math.random();
-				if (i == items.size()) {
-					i = i - 1;
-				}
-				player.removeItem(items.get(i));
-				System.out.println("The zombie reached you and stole your ");
-			}
+		//	if (zombie.getTurns() == 0 && zombie.getHealth() > 0) {
+				//ArrayList<Item> items = new ArrayList<Item>();
+			//	items = player.getInv();
+		//		int i = items.size() * (int) Math.random();
+				//if (i == items.size()) {
+					//i = i - 1;
+				//}
+				//player.removeItem(items.get(i));
+			//	System.out.println("The zombie reached you and stole your ");
+		//	}
 		}
 		return player;
 	}
@@ -133,12 +133,12 @@ public class Outside extends Room{
 		if ((int) (10.0 * Math.random()) >= 7) {
 			System.out.println("The zombie dropped a flash drive as he ran.");
 			Flashdrive flashdrive = new Flashdrive("A zombie dropped this flash drive.", 20);
-			player.addItem(flashdrive);
+			player.addFlashdrive(flashdrive);
 		}
 		else if ((int) (10.0 * Math.random()) >= 5) {
 			System.out.println("The zombie dropped a textbook as he ran.");
 			Textbook textbook = new Textbook("A zombie dropped this textbook.", 10);
-			player.addItem(textbook);
+			player.addTextbook(textbook);
 		}
 		int droppedDarts = (int) (10.0 * Math.random()) + 2;
 		System.out.println("The zombie has dropped " + droppedDarts + "darts.");

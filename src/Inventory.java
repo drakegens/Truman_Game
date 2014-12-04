@@ -9,19 +9,32 @@ public class Inventory {
 	private String eqName;
 	private int eqAcc;
 	private int eqPow;
-	private ArrayList<Item> inv = new ArrayList<Item>();
+	private ArrayList<Textbook> textInv = new ArrayList<Textbook>();
+	private ArrayList<Flashdrive> flashInv = new ArrayList<Flashdrive>();
 	private ArrayList<NerfGun> gunInv = new ArrayList<NerfGun>();
 	
-	public ArrayList<Item> getInv() {
-		return inv;
+	public ArrayList<Flashdrive> getFlash() {
+		return flashInv;
 	}
 	
-	public void addItem(Item item) {
-		inv.add(item);
+	public ArrayList<Textbook> getBooks() {
+		return textInv;
 	}
 	
-	public void remItem(Item item) {
-		inv.remove(item);
+	public void addBook(Textbook book) {
+		textInv.add(book);
+	}
+	
+	public void remBook(Textbook book) {
+		textInv.remove(book);
+	}
+	
+	public void addFlash(Flashdrive flash) {
+		flashInv.add(flash);
+	}
+	
+	public void remFlash(Flashdrive flash) {
+		flashInv.remove(flash);
 	}
 	
 	public void addGun(NerfGun gun) {

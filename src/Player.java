@@ -16,12 +16,20 @@ public class Player {
 //		return inv.getInv();
 //	}
 	
-	public void addItem(Item item) {
-		inv.addItem(item);
+	public void addTextbook(Textbook item) {
+		inv.addBook(item);
 	}
 	
-	public void removeItem(Item item) {
-		inv.remItem(item);
+	public void removeTextbook(Textbook item) {
+		inv.remBook(item);
+	}
+	
+	public void addFlashdrive(Flashdrive item) {
+		inv.addFlash(item);
+	}
+	
+	public void removeFlashdrive(Flashdrive item) {
+		inv.remFlash(item);
 	}
 	
 	public void addGun(NerfGun gun) {
@@ -61,8 +69,12 @@ public class Player {
 		return inv.getNerfGuns();
 	}
 	
-	public ArrayList<Item> getInv() {
-		return inv.getInv();
+	public ArrayList<Flashdrive> getFlash() {
+		return inv.getFlash();
+	}
+	
+	public ArrayList<Textbook> getBooks() {
+		return inv.getBooks();
 	}
 	
 	// Mutators
