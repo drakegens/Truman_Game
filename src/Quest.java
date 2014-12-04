@@ -16,7 +16,7 @@ public class Quest {
 	private static boolean day1 = true;
 	private static boolean visitedCH3251 = false;
 	
-	public static void main() {
+	public static void main(String[] args) {
 		Player player = new Player();
 		Home home = new Home();
 		player = home.start(player);
