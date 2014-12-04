@@ -97,7 +97,7 @@ public class VioletHall {
 	
 	public Player investigateBackpacks(Player player){
 		System.out.println("You find a textbook on computer science. You take the textbook.");
-		Textbook textbook = new Textbook("Big Java", 35);
+		Textbook textbook = new Textbook("Big Java","A textbook about java programming concepts",35);//heres the push needed
 		player.addTextbook(textbook);
 		return player;
 	}
@@ -105,7 +105,7 @@ public class VioletHall {
 	public void laptopTrivia() {
 		System.out.println("You find the laptop is open to a page about Truman. \n"
 				+ "You gain no knowledge from this, but you do learn some trivia: \n"
-				+ "MO Hall is designed similarly to a prison."); //Add in trivia
+				+ "MO Hall is designed similarly to a prison."); 
 	}
 	
 	public boolean getSideQuestStart() {
@@ -159,7 +159,16 @@ public class VioletHall {
 	}
 	
 	public void thirdLecture() {
-		
+System.out.println("Player enters another class taught by Dr. Neitzke, /n" +
+	"It seems like he teaches every class the player has. /n"
+		+ "You have time to do two things before class.");
+String response;
+Scanner in = new Scanner(System.in);
+int t = 0;
+while (t < 2){
+	System.out.println("You decide to...");
+	//System.out.println
+}
 	}
 	
 	public void fourthLecture() {
