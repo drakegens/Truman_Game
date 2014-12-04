@@ -7,6 +7,7 @@ public class Home extends Room {
 	public Player start(Player player) {
 		System.out.println("You are at home. There is a computer, a bed, and 3 textbooks. You can: \n");
 		Scanner in = new Scanner(System.in);
+		String response;
 		boolean valid = false;
 		boolean gotten = false;
 		while (valid = false){
@@ -15,7 +16,7 @@ public class Home extends Room {
 				System.out.println("Pick up textbooks.");
 			}
 			System.out.println("You choose to...");
-			String response = in.nextLine();
+			response = in.nextLine();
 			if (response.equals("Go to Violet Hall.")) {
 				valid = true;
 				System.out.println("It's Humans vs. Zombies at Truman right now, so you pick up your nerf pistol and 25 nerf darts on your way out.");
@@ -37,5 +38,19 @@ public class Home extends Room {
 		return player;
 	}
 	
-	
+	public Player firstNight(Player player) {
+		System.out.println("You arrive at your home. You can...");
+		Scanner in = new Scanner(System.in);
+		String response;
+		boolean sleep = false;
+		while (!sleep) {
+			System.out.println("Go to sleep.");
+			System.out.println("Study.");
+			response = in.nextLine();
+			
+		}
+		Outside encounter = new Outside();
+		player = encounter.encounter(player);
+		return player;
+	}
 }
