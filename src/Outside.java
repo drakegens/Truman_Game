@@ -119,7 +119,10 @@ public class Outside extends Room{
 					i = i - 1;
 				}
 				player.removeItem(items.get(i));
+
+				System.out.println("The zombie reached you and stole your ");
 			}
+
 		}
 		return player;
 	}
