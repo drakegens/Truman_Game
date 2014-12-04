@@ -16,7 +16,7 @@ public class Quest {
 	private static boolean day1 = true;
 	private static boolean visitedCH3251 = false;
 	
-	public static void main() {
+	public static void main(String[] args) {
 		Player player = new Player();
 		Home home = new Home();
 		player = home.start(player);
@@ -34,7 +34,7 @@ public class Quest {
 			System.out.println("Home");
 			
 			response = in.nextLine();
-			if (response.equals("Centennial Hall room 3251") & vh.getSideQuestStart() & !visitedCH3251) {
+			if (response.equals("Centennial Hall room 3251") && vh.getSideQuestStart() && !visitedCH3251) {
 				visitedCH3251 = true;
 				ch.room3251(player);
 			}

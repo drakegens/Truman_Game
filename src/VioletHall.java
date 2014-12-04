@@ -53,17 +53,17 @@ public class VioletHall {
 				c++;
 				laptopTrivia();	
 			}
-			if (response.equals("Investigate backpacks.") && !investigatedBackpack){
+			if (response.equals("Investigate the backpack.") && !investigatedBackpack){
 				c++;
 				player = investigateBackpacks(player);
 			}
-			if (response.equals("Investigate students.") && !investigatedStudents){
+			if (response.equals("Investigate the students.") && !investigatedStudents){
 				System.out.println("All 4 students are in a deep slumber. \n"
 						+ "On their desks is a sheet of paper with writing, \n"
 						+ "that the students seem to have been diligently working on. \n");
 			}
 			if (investigatedStudents && !investigatedPaper){
-				if (response.equals("Investigate sheet of paper.") && !investigatedPaper){
+				if (response.equals("Investigate the sheet of paper.") && !investigatedPaper){
 					c++;
 					System.out.println("The sheet of paper is incomprehensible. \n"
 							+ "It is full of scribbles and nonsense. \n"
@@ -89,6 +89,7 @@ public class VioletHall {
 			}
 			else {invalidResponse();}
 		}
+		in.close();
 		Outside encounter = new Outside();
 		player = encounter.encounter(player);
 		return player;
@@ -111,8 +112,50 @@ public class VioletHall {
 		return sidequestStart;
 	}
 
-	public void secondLecture() {
+	public Player secondLecture(Player player) {
+		boolean investigateStudents = false;
+		boolean investigateBulletinBoard = false;
+		System.out.println("Player enters another lecture by Dr. Neitzke in VH 1328 \n"
+				+ "It is 5 minutes before class. You only have time to do one thing.\n");
 		
+		String response;
+		Scanner in = new Scanner(System.in);
+         int t = 0;
+       while (t < 1){
+    	   System.out.println("You decide to...");
+    	   if (!investigateStudents){
+    		   System.out.println("Investigate the students.");
+    	   }
+    	   if (!investigateBulletinBoard){
+    		   System.out.println("Investigate the bulletin board.");
+    	   }
+    	   System.out.println("Take a seat before class.");
+    	   response = in.nextLine();
+    	   if (response.equals("Investigate the students.") && !investigateStudents){
+    		   System.out.println("Two students seem to be working on the final review together /n"
+    				   +"You learn by eavesdropping that there are four questions on the final. /n"
+    				   + "Seems like a pretty easy final.");
+    		   player.addKnowledge(20);
+    		   t++;
+    		   
+    	   }
+    	   if (response.equals("Investigate the bulletin board.") && !investigateBulletinBoard){
+    		   System.out.println("The bulletin board contains lot of useful information. /n"
+    				   + "It states that the president of the University's name is Dr. Troy Paino, /n"
+    				   + "not Dr. Leroy Piano, as many seem to believe.");
+    		   player.addKnowledge(20);
+    		   t++;
+    	   }
+    	   if (response.equals("Take a seat before class.")){
+    		   t++;
+    	   }
+    	   else {invalidResponse();}
+    	   
+       }
+       in.close();
+       Outside encounter = new Outside();
+       player = encounter.encounter(player);
+       return player;
 	}
 	
 	public void thirdLecture() {

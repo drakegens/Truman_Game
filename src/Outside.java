@@ -10,6 +10,7 @@ public class Outside extends Room{
 
 	private int accuracy;
 	private int power;
+
 	private boolean running = false;
 	private int weather;
 	/**
@@ -26,6 +27,7 @@ public class Outside extends Room{
 	
 	public Player encounter(Player player) {
 		Zombie zombie = new Zombie("zomb");
+
 		Scanner in = new Scanner(System.in);
 		if (weather == 0) {
 			System.out.println("It's sunny outside. You suffer a -2 accuracy penalty");
@@ -40,6 +42,7 @@ public class Outside extends Room{
 		if (weather == 3) {
 			System.out.println("It is windy. You suffer a -5 power penalty.");
 		}
+
 		updateStats(player);
 		while (zombie.getTurns() >= 0 && zombie.getHealth() > 0 && !running) {
 			System.out.println("The zombie has " + zombie.getTurns() + "more turns before it reaches you. \n"
@@ -53,8 +56,10 @@ public class Outside extends Room{
 			String response = in.nextLine();
 			if (response.equals("Shoot the zombie.")) {
 				if (player.getDarts() > 0) { //player has darts
+
 					player.changeDarts(-1); //You've shot a nerf gun, so you lost a nerf dart
 					if ((int) (20.0 * Math.random()) + 1 >= 20 - accuracy) { //roll a d20, if the roll is greater than or equal to 20 - accuracy, success
+
 						System.out.println("You hit the zombie for " + power + "damage."); //Hit for the power of the nerf gun
 						zombie.changeHealth(player.getPow()); //Zombie loses health equal to the power of the weapon.
 					}
@@ -65,6 +70,7 @@ public class Outside extends Room{
 				else { //player has no darts
 					System.out.println("You have no darts left.");
 					zombie.changeTurns(-1); //add 1 to the zombie's turns because you didn't actually shoot.
+
 				}
 			}
 			else if (response.equals("Try to run.")) {
@@ -83,6 +89,7 @@ public class Outside extends Room{
 					}
 				}
 			}
+
 			else if (response.equals("Change weapons.")) {
 				System.out.println("What weapon do you want to use? Please input the number of the weapon you want to use.");
 				ArrayList<NerfGun> weapons = new ArrayList<NerfGun>();
