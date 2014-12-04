@@ -10,10 +10,8 @@ public class KnowledgeItem extends Item {
 	
 	public KnowledgeItem(String description, int knowledge) {
 		super(description);
-		// TODO Auto-generated constructor stub
-		{this.knowledge = knowledge;
-		
-		}
+		{this.knowledge = knowledge;}
+		changeIsWeapon(false); //These items are not weapons.
 	}
 
 }

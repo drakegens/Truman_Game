@@ -7,6 +7,7 @@
 public abstract class Item {
 
 	private String description;
+	private boolean isWeapon;
 	
 	public Item(String description)
 		{this.description = description;
@@ -15,6 +16,13 @@ public abstract class Item {
 	
 	public String getDesc() {
 		return description;
+	}
+	
+	public boolean getIsWeapon() {
+		return isWeapon;
+	}
+	public void changeIsWeapon(boolean bool) {
+		isWeapon = bool;
 	}
 }
 

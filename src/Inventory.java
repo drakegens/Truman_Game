@@ -53,5 +53,15 @@ public class Inventory {
 		eqAcc = n.getAccuracy();
 		eqPow = n.getPower();
 	}
+	
+	public ArrayList<NerfGun> getNerfGuns() {
+		ArrayList<NerfGun> nerfGuns = new ArrayList<NerfGun>();
+		for (Item item : inv) {
+			if (item.getIsWeapon() == true) {
+				
+			}
+		}
+		return nerfGuns;
+	}
 }
  
