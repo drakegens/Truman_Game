@@ -19,7 +19,7 @@ public class Quest {
 	public static void main() {
 		Player player = new Player();
 		Home home = new Home();
-		home.start(player);
+		player = home.start(player);
 		VioletHall vh = new VioletHall();
 		player = vh.firstLecture(player);
 		firstLecture = true;
@@ -29,14 +29,17 @@ public class Quest {
 		while (day1) {
 			System.out.println("Where do you want to go? You can go to... ");
 			if (vh.getSideQuestStart() & !visitedCH3251) {
-				System.out.println("Centenial Hall room 3251");
+				System.out.println("Centennial Hall room 3251");
 			}
 			System.out.println("Home");
 			
 			response = in.nextLine();
-			if (response.equals("Centenial Hall room 3251") & vh.getSideQuestStart() & !visitedCH3251) {
+			if (response.equals("Centennial Hall room 3251") & vh.getSideQuestStart() & !visitedCH3251) {
 				visitedCH3251 = true;
 				ch.room3251(player);
+			}
+			if (response.equals("Home")) {
+				player = home.firstNight(player);
 			}
 		}
 	}

@@ -46,7 +46,11 @@ public class Home extends Room {
 		while (!sleep) {
 			System.out.println("Go to sleep.");
 			System.out.println("Study.");
+			
 			response = in.nextLine();
+			if (response.equals("Study.")) {
+				
+			}
 			
 		}
 		Outside encounter = new Outside();
