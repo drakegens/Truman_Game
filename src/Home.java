@@ -84,10 +84,22 @@ public class Home extends Room {
 					System.out.println(i + ". " + book.getName());
 				}
 				int num = in.nextInt() - 1;
-				
+				System.out.println(tInv.get(num).getDesc());
+				System.out.println("You gain " + tInv.get(num).getKnowledge() + " knowledge.");
+				player.addKnowledge(tInv.get(num).getKnowledge());
+				player.removeTextbook(tInv.get(num));
+				tInv.remove(num);
 			}
 			if (response.equals("Use flashdrive.")) {
-				
+				int counter = 0;
+				int knowledge = 0;
+				for (Flashdrive flash : fInv) {
+					counter++;
+					knowledge = flash.getKnowledge() + knowledge;
+					player.removeFlashdrive(flash);
+				}
+				System.out.println("You used " + counter + " flashdrives and gained " + knowledge + " knowledge.");
+				player.addKnowledge(knowledge);
 			}
 			if (response.equals("Stop studying.")) {
 				studying = false;
