@@ -35,10 +35,10 @@ public class VioletHall {
 			if (!investigatedStudents) {
 				System.out.println("Investigate the students.");
 			}
-			if ((!investigatedPaper) & (investigatedStudents)) {
+			if ((!investigatedPaper) && (investigatedStudents)) {
 				System.out.println("Investigate the sheet of paper.");
 			}
-			if (investigatedStudents & !wokenStudent) {
+			if (investigatedStudents && !wokenStudent) {
 				System.out.println("Wake up a student and converse.");
 			}
 			if (!investigatedBulletinBoard){
@@ -48,20 +48,20 @@ public class VioletHall {
 			
 			//possible outcomes
 			response = in.nextLine();
-			if (response.equals("Investigate the laptop.") & !investigatedLaptop){
+			if (response.equals("Investigate the laptop.") && !investigatedLaptop){
 				c++;
 				laptopTrivia();	
 			}
-			if (response.equals("Investigate backpacks.") & !investigatedBackpack){
+			if (response.equals("Investigate backpacks.") && !investigatedBackpack){
 				c++;
 				player = investigateBackpacks(player);
 			}
-			if (response.equals("Investigate students.") & !investigatedStudents){
+			if (response.equals("Investigate students.") && !investigatedStudents){
 				System.out.println("All 4 students are in a deep slumber. \n"
 						+ "On their desks is a sheet of paper with writing, \n"
 						+ "that the students seem to have been diligently working on. \n");
 			}
-			if (investigatedStudents & !investigatedPaper){
+			if (investigatedStudents && !investigatedPaper){
 				if (response.equals("Investigate sheet of paper.") & !investigatedPaper){
 					c++;
 					System.out.println("The sheet of paper is incomprehensible. \n"
@@ -76,7 +76,7 @@ public class VioletHall {
 					System.out.println("You converse with the student and learn a bit about Truman's history."); //Add in some trivia here
 				}
 			}
-			if (response.equals("Investigate bulletin board.") & !investigatedBulletinBoard){
+			if (response.equals("Investigate bulletin board.") && !investigatedBulletinBoard){
 				c++;
 				System.out.println("Apparently, it's Humans vs. Zombies at Truman.... \n"
 						+ "The board also says something about a potato.");
