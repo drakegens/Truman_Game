@@ -41,7 +41,7 @@ public class Outside extends Room{
 			System.out.println("It is windy. You suffer a -5 power penalty.");
 		}
 		updateStats(player);
-		while (zombie.getTurns() >= 0 && zombie.getHealth() > 0 && running) {
+		while (zombie.getTurns() >= 0 && zombie.getHealth() > 0 && !running) {
 			System.out.println("The zombie has " + zombie.getTurns() + "more turns before it reaches you. \n"
 					+ "The zombie has " + zombie.getHealth() + "health left. \n"
 							+ "You can: \n"
