@@ -25,7 +25,6 @@ public class Quest {
 	}
 	public void setSecondLecture(){
 		secondLecture = true;
-	
 	}
 	public void setThirdLecture(){
 		thirdLecture = true;

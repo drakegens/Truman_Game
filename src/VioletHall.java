@@ -4,91 +4,103 @@ import java.util.Scanner;
 public class VioletHall {
 
 	public Player firstLecture(Player player) {
+		
+		boolean investigatedLaptop = false;
+		boolean investigatedBackpack = false;
+		boolean investigatedStudents = false;
+		boolean investigatedBulletinBoard = false;
+		boolean investigatedPaper = false;
+		boolean wokenStudent = false;
 		System.out.println("Player enters VH 1216, Dr. Neitzke’s class. \n"
 				+ "It is 10 minutes before class. 4 students are sleeping, \n"
 				+ "backpacks are slumped against a wall. There is a bulletin board, \n"
 				+ "numerous desks and a laptop. \n"
-				+ "You only have time to do 2 things before Dr. Neitzke begins class. \n"
-				+ "Of course leaving the room doesn’t count. You decide to… \n"
-				+ "Leave the room \n"
-				+ "Investigate the Laptop \n"
-				+ "Investigate Backpacks \n"
-				+ "Investigate Students \n"
-				+ "Investigate Bulletin Board \n"
-				+ "Take a seat before class \n");
+				+ "You only have time to do 3 things before Dr. Neitzke begins class. \n");
 		Scanner in = new Scanner(System.in);
 		String response;
-		boolean valid = false;
+		int c = 0;
 		
-		while (!valid){
+		while (c < 2) {
+			
+			//print out the choices
+			System.out.println("You decide to...");
+			if (!investigatedLaptop){
+				System.out.println("Investigate the laptop.");
+			}
+			if (!investigatedBackpack) {
+				System.out.println("Investigate the backpack.");
+			}
+			if (!investigatedStudents) {
+				System.out.println("Investigate the students.");
+			}
+			if ((!investigatedPaper) & (investigatedStudents)) {
+				System.out.println("Investigate the sheet of paper.");
+			}
+			if (investigatedStudents & !wokenStudent) {
+				System.out.println("Wake up a student and converse.");
+			}
+			if (!investigatedBulletinBoard){
+				System.out.println("Investigate the bulletin board.");
+			}
+			System.out.println("Take a seat before class.");
+			
+			//possible outcomes
 			response = in.nextLine();
-			if (response.equals("Leave the room")){
-				valid = true;
-				//leave the room
+			if (response.equals("Investigate the laptop.") & !investigatedLaptop){
+				c++;
+				laptopTrivia();	
 			}
-			if (response.equals("Investigate the Laptop")){
-				valid = true;//investigate laptop
-				
+			if (response.equals("Investigate backpacks.") & !investigatedBackpack){
+				c++;
+				player = investigateBackpacks(player);
 			}
-			if (response.equals("Investigate Backpacks")){
-				valid = true;//investigate backpack
-			}
-			if (response.equals("Investigate Students")){
+			if (response.equals("Investigate students.") & !investigatedStudents){
 				System.out.println("All 4 students are in a deep slumber. \n"
 						+ "On their desks is a sheet of paper with writing, \n"
-						+ "that the students seem to have been diligently working on. \n"
-						+ "You decide to... \n"
-						+ "Investigate sheet of paper \n"
-						+ "Wake up a student and converse \n"
-						+ "Leave the room \n" 
-						+ "Investigate the Laptop \n "
-						+ "Investigate Backpacks \n " 
-						+ "Investigate Bulletin Board \n" 
-						+ "Take a seat before class");
-			boolean v = false;
-			while(!v){
-				response = in.nextLine();
-				if (response.equals("Investigate sheet of paper")){
-					
-				}
-				if (response.equals("Wake up a student and converse")){
-					
-				}
-				if (response.equals("Leave the room")){
-					leaveRoom();
-				}
-				if (response.equals("Investigate the Laptop")){
-					
-				}
-				if (response.equals("Investigate Backpacks")){
-					
-				} 
-				if (response.equals("Investigate Bulletin Board")){
-					
-				}
-				else {invalidResponse();
-				}
-				valid = true;//investigate students
-				
-				}
-			if (response.equals("Investigate Bulletin Board")){
-				valid = true;//investigate bulletin board
+						+ "that the students seem to have been diligently working on. \n");
 			}
-			if (response.equals("Take a seat before class")){
-				valid = true;//take a seat
-				
+			if (investigatedStudents & !investigatedPaper){
+				if (response.equals("Investigate sheet of paper.") & !investigatedPaper){
+					c++;
+					System.out.println("The sheet of paper is incomprehensible. \n"
+							+ "It is full of scribbles and nonsense. \n"
+							+ "Suddenly, you get the feeling that it might be a cipher. \n"
+							+ "You see in the corner a question: ");
+					MultipleChoice cipher = new MultipleChoice("question", "answerA", "answerB", "answerC", "answerD", 'c'); //finish later
+				}
+				if (response.equals("Wake up a student and converse.")){
+					c++;
+					player.addKnowledge(20);
+					System.out.println("You converse with the student and learn a bit about Truman's history."); //Add in some trivia here
+				}
+			}
+			if (response.equals("Investigate bulletin board.") & !investigatedBulletinBoard){
+				c++;
+				System.out.println("Apparently, it's Humans vs. Zombies at Truman.... \n"
+						+ "The board also says something about a potato.");
+			}
+			if (response.equals("Take a seat before class.")){
+				c = 3;
 			}
 			else {invalidResponse();}
-			}
 		}
 		return player;
 	}
-	public void invalidResponse(){
-		System.out.println("Invalid Response");
+	
+	public Player investigateBackpacks(Player player){
+		System.out.println("You find a textbook on computer science. You take the textbook.");
+		Textbook textbook = new Textbook("Big Java", 35);
+		player.addItem(textbook);
+		return player;
 	}
-	public void leaveRoom(){
-		//handle common situation between responses
+	
+	public void laptopTrivia() {
+		System.out.println("You find the laptop is open to a page about Truman. \n"
+				+ "You gain no knowledge from this, but you do learn some trivia: \n"
+				+ ""); //Add in trivia
 	}
+	
+
 	public void secondLecture() {
 		
 	}
@@ -100,5 +112,10 @@ public class VioletHall {
 	public void fourthLecture() {
 		
 	}
+	
+	public void invalidResponse(){
+		System.out.println("Invalid Response");
+	}
+	
 }
 
