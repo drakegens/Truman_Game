@@ -4,7 +4,7 @@ import java.util.Scanner;
  
 public class Home extends Room {
 
-	public void start(Player player) {
+	public Player start(Player player) {
 		System.out.println("You are at home. There is a computer, a bed, and 3 textbooks. You can: \n"
 				+ "Go to Violet Hall. \n"
 				+ "Pick up Textbooks. \n"
@@ -43,8 +43,7 @@ public class Home extends Room {
 			}
 		}
 		Outside encounter = new Outside();
-		encounter.encounter(player);
-		VioletHall next = new VioletHall();
-		next.firstLecture();
+		player = encounter.encounter(player);
+		return player;
 	}
 }

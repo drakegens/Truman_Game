@@ -16,6 +16,8 @@ public class Quest {
 		Player player = new Player();
 		Home home = new Home();
 		home.start(player);
+		VioletHall vh = new VioletHall();
+		player = vh.firstLecture(player);
 		
 	}
 	public void setFirstLecture(){

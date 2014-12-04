@@ -22,7 +22,7 @@ public class Outside extends Room{
 		if (weather == 4) {weather = 3;} // in the very rare event that weather is 4, change it to 3.
 	}
 	
-	public void encounter(Player player) {
+	public Player encounter(Player player) {
 		Zombie zombie = new Zombie("zomb");
 		Scanner in = new Scanner(System.in);
 		while (zombie.getTurns() >= 0 || zombie.getHealth() > 0 || running) {
@@ -88,6 +88,7 @@ public class Outside extends Room{
 				player = loot(player);
 			}
 		}
+		return player;
 	}
 	
 	private Player loot(Player player) {

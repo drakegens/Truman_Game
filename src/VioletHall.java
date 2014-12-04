@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class VioletHall {
 
-	public void firstLecture() {
+	public Player firstLecture(Player player) {
 		System.out.println("Player enters VH 1216, Dr. Neitzke’s class. \n"
 				+ "It is 10 minutes before class. 4 students are sleeping, \n"
 				+ "backpacks are slumped against a wall. There is a bulletin board, \n"
@@ -81,6 +81,7 @@ public class VioletHall {
 			else {invalidResponse();}
 			}
 		}
+		return player;
 	}
 	public void invalidResponse(){
 		System.out.println("Invalid Response");
