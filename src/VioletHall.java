@@ -13,6 +13,7 @@ public class VioletHall {
 		boolean investigatedBulletinBoard = false;
 		boolean investigatedPaper = false;
 		boolean wokenStudent = false;
+		boolean answer = false;
 		System.out.println("Player enters VH 1216, Dr. Neitzke’s class. \n"
 				+ "It is 10 minutes before class. 4 students are sleeping, \n"
 				+ "backpacks are slumped against a wall. There is a bulletin board, \n"
@@ -62,14 +63,16 @@ public class VioletHall {
 						+ "that the students seem to have been diligently working on. \n");
 			}
 			if (investigatedStudents && !investigatedPaper){
-				if (response.equals("Investigate sheet of paper.") & !investigatedPaper){
+				if (response.equals("Investigate sheet of paper.") && !investigatedPaper){
 					c++;
 					System.out.println("The sheet of paper is incomprehensible. \n"
 							+ "It is full of scribbles and nonsense. \n"
 							+ "Suddenly, you get the feeling that it might be a cipher. \n"
 							+ "You see in the corner a question: ");
-					MultipleChoice cipher = new MultipleChoice("question", "answerA", "answerB", "answerC", "answerD", 'c'); //finish later
-				}
+					MultipleChoice cipher = new MultipleChoice("The name became Truman State University in: ", "1996", "1867", "1870", "2005", 'a'); //finish later
+				cipher.askQuestion();
+				sidequestStart = cipher.answerQuestion(in.next().charAt(0));}
+				
 				if (response.equals("Wake up a student and converse.")){
 					c++;
 					player.addKnowledge(20);
@@ -101,7 +104,7 @@ public class VioletHall {
 	public void laptopTrivia() {
 		System.out.println("You find the laptop is open to a page about Truman. \n"
 				+ "You gain no knowledge from this, but you do learn some trivia: \n"
-				+ ""); //Add in trivia
+				+ "MO Hall is designed similarly to a prison."); //Add in trivia
 	}
 	
 	public boolean getSideQuestStart() {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @version 12/2
  */
 public class Player {
-
+//private boolean cHallQuest = false;
 	private Inventory inv = new Inventory();
 	private int knowledge = 100;
 	
