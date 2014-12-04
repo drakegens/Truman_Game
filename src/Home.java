@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
  
@@ -10,7 +11,7 @@ public class Home extends Room {
 		String response;
 		boolean valid = false;
 		boolean gotten = false;
-		while (valid = false){
+		while (valid == false){
 			System.out.println("Go to Violet Hall.");
 			if (!gotten) {
 				System.out.println("Pick up textbooks.");
@@ -49,12 +50,21 @@ public class Home extends Room {
 			
 			response = in.nextLine();
 			if (response.equals("Study.")) {
-				
+				player = study(player);
 			}
-			
+			if (response.equals("Go to sleep.")) {
+				System.out.println("You turn in for the night.");
+				sleep = true;
+			}
 		}
 		Outside encounter = new Outside();
 		player = encounter.encounter(player);
+		return player;
+	}
+	
+	private Player study(Player player) {
+		ArrayList<Item> inv = new ArrayList<Item>();
+		inv = player.getInv();
 		return player;
 	}
 }
