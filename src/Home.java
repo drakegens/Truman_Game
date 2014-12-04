@@ -21,7 +21,7 @@ public class Home extends Room {
 			if (response.equals("Go to Violet Hall.")) {
 				valid = true;
 				System.out.println("It's Humans vs. Zombies at Truman right now, so you pick up your nerf pistol and 25 nerf darts on your way out.");
-				NerfGun nerfPistol = new NerfGun("Nerf Pistol. It has 17 accuracy, and 15 power.", "Nerf Pistol", 17, 15);
+				NerfGun nerfPistol = new NerfGun("Nerf Pistol. It has 17 accuracy, and 30 power.", "Nerf Pistol", 17, 30);
 				player.addGun(nerfPistol);
 			}
 			else if (response.equals("Pick up textbooks.") && !gotten) {
@@ -65,6 +65,7 @@ public class Home extends Room {
 	private Player study(Player player) {
 		ArrayList<Item> inv = new ArrayList<Item>();
 		inv = player.getInv();
+		
 		return player;
 	}
 }
