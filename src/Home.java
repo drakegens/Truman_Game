@@ -26,7 +26,7 @@ public class Home extends Room {
 			}
 			else if (response.equals("Pick up textbooks.") && !gotten) {
 				System.out.println("You pick up your computer science textbook.");
-				Textbook textbook = new Textbook("Object Oriented Design", 25);
+				Textbook textbook = new Textbook("Object Oriented Design", "This textbook teaches you how to program in an object oriented language.", 25);
 				player.addTextbook(textbook);
 				gotten = true;
 			}
@@ -65,6 +65,8 @@ public class Home extends Room {
 	private Player study(Player player) {
 		ArrayList<Flashdrive> fInv = new ArrayList<Flashdrive>();
 		fInv = player.getFlash();
+		ArrayList<Textbook> tInv = new ArrayList<Textbook>();
+		tInv = player.getBooks();
 		boolean studying = true;
 		Scanner in = new Scanner(System.in);
 		String response;
@@ -75,7 +77,12 @@ public class Home extends Room {
 				+ "Stop studying. ");
 			response = in.nextLine();
 			if (response.equals("Read textbook.")) {
-				
+				System.out.println("What textbook do you want to read? Input the number of the book you want to read.");
+				int i = 0;
+				for (Textbook book : tInv) {
+					i++;
+					System.out.println(i + ". " + book.getName());
+				}
 			}
 			if (response.equals("Use flashdrive.")) {
 				

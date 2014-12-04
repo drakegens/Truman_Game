@@ -144,7 +144,7 @@ public class Outside extends Room{
 		}
 		else if ((int) (10.0 * Math.random()) >= 5) {
 			System.out.println("The zombie dropped a textbook as he ran.");
-			Textbook textbook = new Textbook("A zombie dropped this textbook.", 10);
+			Textbook textbook = new Textbook("Zombie's textbook", "A zombie dropped this textbook.", 10);
 			player.addTextbook(textbook);
 		}
 		int droppedDarts = (int) (10.0 * Math.random()) + 2;
