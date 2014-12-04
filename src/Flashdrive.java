@@ -10,9 +10,5 @@ public class Flashdrive extends KnowledgeItem {
 		super(description, knowledge);
 		// TODO Auto-generated constructor stub
 	}
-
-	public void addKnowledge() {
-		
-	}
 }
 

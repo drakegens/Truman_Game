@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class CentenialHall {
 
+	private boolean found = false;
 	public Player room3251(Player player) {
 		System.out.println("You arrive at Centennial Hall room 3251. \n"
 				+ "At first, you don't see anything. Then, a door appears mysteriously out of nowhere. \n"
@@ -10,7 +11,6 @@ public class CentenialHall {
 				+ "Inside, you find that the room is incredibly dusty, as if nobody has been here for decades. \n"
 				+ "There is stuff everywhere. \n"
 				+ "What do you do?");
-		boolean found = false;
 		boolean investigatedBed = false;
 		boolean investigatedBathroom = false;
 		boolean investigatedCloset = false;
@@ -67,5 +67,9 @@ public class CentenialHall {
 		Outside encounter = new Outside();
 		player = encounter.encounter(player);
 		return player;
+	}
+	
+	public boolean getFound() {
+		return found;
 	}
 }
