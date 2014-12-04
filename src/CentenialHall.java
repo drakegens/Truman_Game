@@ -42,7 +42,7 @@ public class CentenialHall {
 			if (response.equals("Investigate the closet") && !investigatedCloset) {
 				System.out.println("This closet is old and musty. Within it you find a nerf shotgun. \n"
 						+ "How this arrived here, no one will ever know.");
-				NerfGun nerfShotGun = new NerfGun("Nerf Shotgun, has 3 accuracy and 50 power", "Nerf Shotgun", 3, 20);
+				NerfGun nerfShotGun = new NerfGun("Nerf Shotgun, has 3 accuracy and 50 power", "Nerf Shotgun", 7, 20);
 				player.addGun(nerfShotGun);
 				investigatedCloset = true;
 			}
