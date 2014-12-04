@@ -20,7 +20,7 @@ public class Outside extends Room{
 	 * 3 is windy
 	 */
 	public Outside() {
-		weather = 4 *(int) Math.random();
+		weather = (int) (4.0 * Math.random());
 		if (weather == 4) {weather = 3;} // in the very rare event that weather is 4, change it to 3.
 	}
 	
@@ -54,7 +54,7 @@ public class Outside extends Room{
 			if (response.equals("Shoot the zombie.")) {
 				if (player.getDarts() > 0) { //player has darts
 					player.changeDarts(-1); //You've shot a nerf gun, so you lost a nerf dart
-					if (20 * Math.random() + 1 >= 20 - accuracy) { //roll a d20, if the roll is greater than or equal to 20 - accuracy, success
+					if ((int) (20.0 * Math.random()) + 1 >= 20 - accuracy) { //roll a d20, if the roll is greater than or equal to 20 - accuracy, success
 						System.out.println("You hit the zombie for " + power + "damage."); //Hit for the power of the nerf gun
 						zombie.changeHealth(player.getPow()); //Zombie loses health equal to the power of the weapon.
 					}
@@ -69,7 +69,7 @@ public class Outside extends Room{
 			}
 			else if (response.equals("Try to run.")) {
 				if (weather == 2) {
-					if (20 * (int) Math.random() + 1 >= 18) { //roll a d20, if a 18 or higher is rolled, success
+					if ((int)(20.0 *  Math.random()) + 1 >= 18) { //roll a d20, if a 18 or higher is rolled, success
 						running = true;
 					}
 					else {
@@ -78,7 +78,7 @@ public class Outside extends Room{
 					}
 				}
 				else {
-					if (20 * (int) Math.random() + 1 >= 15) { //roll a d20, if a 15 or higher is rolled, success
+					if ((int) (20.0 * Math.random()) + 1 >= 15) { //roll a d20, if a 15 or higher is rolled, success
 						running = true;
 					}
 				}
@@ -129,17 +129,17 @@ public class Outside extends Room{
 	}
 	
 	private Player loot(Player player) {
-		if (10 * Math.random() >= 7) {
+		if ((int) (10.0 * Math.random()) >= 7) {
 			System.out.println("The zombie dropped a flash drive as he ran.");
 			Flashdrive flashdrive = new Flashdrive("A zombie dropped this flash drive.", 20);
 			player.addItem(flashdrive);
 		}
-		else if (10 * Math.random() >= 5) {
+		else if ((int) (10.0 * Math.random()) >= 5) {
 			System.out.println("The zombie dropped a textbook as he ran.");
 			Textbook textbook = new Textbook("A zombie dropped this textbook.", 10);
 			player.addItem(textbook);
 		}
-		int droppedDarts = 10 * (int) Math.random() + 2;
+		int droppedDarts = (int) (10.0 * Math.random()) + 2;
 		System.out.println("The zombie has dropped " + droppedDarts + "darts.");
 		player.changeDarts(droppedDarts);	
 		return player;	
