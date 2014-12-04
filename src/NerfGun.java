@@ -10,7 +10,6 @@ public class NerfGun extends Item {
 		name = n;
 		accuracy = a;
 		power = p;
-		changeIsWeapon(true); //these items are weapons
 	}
 
 	public int getPower() {

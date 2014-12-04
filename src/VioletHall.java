@@ -38,15 +38,15 @@ public class VioletHall {
 						+ "On their desks is a sheet of paper with writing, \n"
 						+ "that the students seem to have been diligently working on. \n"
 						+ "You decide to... \n"
-						+ "Investigate sheet of paper \n"+
-                        "Wake up a student and converse \n"+
-                         "Leave the room \n" +
-                        "Investigate the Laptop \n " +
-                        "Investigate Backpacks \n " + 
-                       "Investigate Bulletin Board \n" +
-                          "Take a seat before class");
-				boolean v = false;
-				while(!v){
+						+ "Investigate sheet of paper \n"
+						+ "Wake up a student and converse \n"
+						+ "Leave the room \n" 
+						+ "Investigate the Laptop \n "
+						+ "Investigate Backpacks \n " 
+						+ "Investigate Bulletin Board \n" 
+						+ "Take a seat before class");
+			boolean v = false;
+			while(!v){
 				response = in.nextLine();
 				if (response.equals("Investigate sheet of paper")){
 					
@@ -67,10 +67,10 @@ public class VioletHall {
 					
 				}
 				else {invalidResponse();
-					}
+				}
 				valid = true;//investigate students
 				
-			}
+				}
 			if (response.equals("Investigate Bulletin Board")){
 				valid = true;//investigate bulletin board
 			}

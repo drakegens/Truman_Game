@@ -11,7 +11,6 @@ public class KnowledgeItem extends Item {
 	public KnowledgeItem(String description, int knowledge) {
 		super(description);
 		{this.knowledge = knowledge;}
-		changeIsWeapon(false); //These items are not weapons.
 	}
 
 }
