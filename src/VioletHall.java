@@ -273,6 +273,9 @@ return player;
 		Scanner in = new Scanner(System.in);
 		String response;
 		boolean valid = false;
+		if(player.getKnowledge() >= 200){System.out.println("You have acquired enough knowledge so that your score has been /n"
+		+ "incremented by 1. Good job!"); score++;}		
+		
 		while (!valid){
 			System.out.println("First question: T/F The president of Truman's name is /n"
 					+ "Dr. Leroy Piano. (Enter T/F)");
