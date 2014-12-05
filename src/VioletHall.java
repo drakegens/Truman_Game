@@ -96,7 +96,8 @@ public class VioletHall {
 			}
 			else {invalidResponse();}
 		}
-		in.close();
+		
+		System.out.println("You sit through class and leave.");
 		Outside encounter = new Outside();
 		player = encounter.encounter(player);
 		return player;
@@ -163,7 +164,7 @@ public class VioletHall {
     	   else {invalidResponse();}
     	   
        }
-       in.close();
+       System.out.println("You sit through class and leave.");
        Outside encounter = new Outside();
        player = encounter.encounter(player);
        return player;
@@ -224,7 +225,7 @@ public class VioletHall {
 
 
 		}
-		in.close();
+		System.out.println("You sit through class and leave.");
 		Outside encounter = new Outside();
 		player = encounter.encounter(player);
 		return player;
@@ -260,7 +261,7 @@ public class VioletHall {
 			}
 			else {invalidResponse();}
 		}
-		in.close();
+		System.out.println("You sit through class and leave.");
 		Outside encounter = new Outside();
 		player = encounter.encounter(player);
 		return player;
@@ -311,7 +312,7 @@ public class VioletHall {
 		if (a) {score++; System.out.println("Correct.");}
 		else {System.out.println("Incorrect.");}
 	
-		in.close();
+		
 		if (score >= 3){System.out.println("You have passed the final and won the game. Did the amulet of Yendor help you?");}
 		else {System.out.println("You have failed the final and lost the game. Maybe you should try again and look for a certain amulet.");}
 	}
