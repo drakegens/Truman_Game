@@ -7,19 +7,18 @@ import java.util.ArrayList;
  * @version 12/2
  */
 public class Player {
-//private boolean cHallQuest = false;
+    private boolean amulet = false;
 	private Inventory inv = new Inventory();
 	private int knowledge = 100;
 	
-	// I don't know if we need this accessor
-//	public ArrayList<Item> getInv() {
-//		return inv.getInv();
-//	}
+
 	
 	public void addTextbook(Textbook item) {
 		inv.addBook(item);
 	}
-	
+	public boolean amuletWon(){
+		return amulet;
+	}
 	public void removeTextbook(Textbook item) {
 		inv.remBook(item);
 	}
