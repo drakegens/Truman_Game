@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
  
-public class Home extends Room {
+public class Home {
 
 	public Player start(Player player) {
 		System.out.println("You are at home. There is a computer, a bed, and 3 textbooks. You can: \n");

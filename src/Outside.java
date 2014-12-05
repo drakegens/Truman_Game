@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author Seth Martin
  * @version 12/2
  */
-public class Outside extends Room{
+public class Outside {
 
 	private int accuracy;
 	private int power;
