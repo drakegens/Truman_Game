@@ -92,6 +92,7 @@ public class Mcclain {
 				System.out.println("Invalid response.");
 			}
 		}
+		player.foundAmulet();
 		Outside encounter = new Outside();
 		player = encounter.encounter(player);
 		return player;

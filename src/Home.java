@@ -23,6 +23,7 @@ public class Home extends Room {
 				System.out.println("It's Humans vs. Zombies at Truman right now, so you pick up your nerf pistol and 25 nerf darts on your way out.");
 				NerfGun nerfPistol = new NerfGun("Nerf Pistol. It has 17 accuracy, and 30 power.", "Nerf Pistol", 17, 30);
 				player.addGun(nerfPistol);
+				player.changeGun(nerfPistol);
 			}
 			else if (response.equals("Pick up textbooks.") && !gotten) {
 				System.out.println("You pick up your computer science textbook.");

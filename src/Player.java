@@ -13,33 +13,11 @@ public class Player {
 	
 
 	
-	public void addTextbook(Textbook item) {
-		inv.addBook(item);
-	}
+	//Accessors
 	public boolean amuletWon(){
 		return amulet;
 	}
-	public void removeTextbook(Textbook item) {
-		inv.remBook(item);
-	}
 	
-	public void addFlashdrive(Flashdrive item) {
-		inv.addFlash(item);
-	}
-	
-	public void removeFlashdrive(Flashdrive item) {
-		inv.remFlash(item);
-	}
-	
-	public void addGun(NerfGun gun) {
-		inv.addGun(gun);
-	}
-	
-	public void addKnowledge(int x) {
-		knowledge = knowledge + x;
-	}
-	
-	//Accessors
 	public int getKnowledge() {
 		return knowledge;
 	}
@@ -77,6 +55,34 @@ public class Player {
 	}
 	
 	// Mutators
+		public void addTextbook(Textbook item) {
+		inv.addBook(item);
+	}
+
+	public void removeTextbook(Textbook item) {
+		inv.remBook(item);
+	}
+	
+	public void addFlashdrive(Flashdrive item) {
+		inv.addFlash(item);
+	}
+	
+	public void removeFlashdrive(Flashdrive item) {
+		inv.remFlash(item);
+	}
+	
+	public void addGun(NerfGun gun) {
+		inv.addGun(gun);
+	}
+	
+	public void addKnowledge(int x) {
+		knowledge = knowledge + x;
+	}
+	
+	public void foundAmulet() {
+		amulet = true;
+	}
+	
 	public void changeGun(NerfGun n) {
 		inv.equip(n);
 	}

@@ -1,11 +1,12 @@
 //Updated
-public class Zombie extends NPC{
+public class Zombie {
 
 	private int turns; // a zombie takes a number of turns to reach you
 	private int health;
+	private String name;
 
-	public Zombie(String name){
-		super(name);
+	public Zombie(String n){
+		name = n;
 		turns = (int) (5.0 *  Math.random()) + 7;
 		health = 100;
 	}

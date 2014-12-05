@@ -36,7 +36,7 @@ public class VioletHall {
 			if (!investigatedStudents) {
 				System.out.println("Investigate the students.");
 			}
-			if ((!investigatedPaper) && (investigatedStudents)) {
+			if (investigatedStudents && !investigatedPaper) {
 				System.out.println("Investigate the sheet of paper.");
 			}
 			if (investigatedStudents && !wokenStudent) {
@@ -53,45 +53,44 @@ public class VioletHall {
 				investigatedLaptop = true;
 				c++;
 				
-				laptopTrivia();	
+				laptopTrivia();	 //test
 			}
-			if (response.equals("Investigate the backpack.") && !investigatedBackpack){
+			else if (response.equals("Investigate the backpack.") && !investigatedBackpack){
 			investigatedBackpack = true;
 				c++;
 				player = investigateBackpacks(player);
 			}
-			if (response.equals("Investigate the students.") && !investigatedStudents){
+			else if (response.equals("Investigate the students.") && !investigatedStudents){
 				investigatedStudents = true;
 				System.out.println("All 4 students are in a deep slumber. \n"
 						+ "On their desks is a sheet of paper with writing, \n"
 						+ "that the students seem to have been diligently working on. \n");
 			}
-			if (investigatedStudents && !investigatedPaper){
-				investigatedPaper = true;
+			else if (investigatedStudents && !investigatedPaper){
 				if (response.equals("Investigate the sheet of paper.") && !investigatedPaper){
+					investigatedPaper = true;
 					c++;
 					System.out.println("The sheet of paper is incomprehensible. \n"
 							+ "It is full of scribbles and nonsense. \n"
 							+ "Suddenly, you get the feeling that it might be a cipher. \n"
 							+ "You see in the corner a question: ");
 					MultipleChoice cipher = new MultipleChoice("The name became Truman State University in: ", "1996", "1867", "1870", "2005", 'a'); //finish later
-				cipher.askQuestion();
-				sidequestStart = cipher.answerQuestion(in.next().charAt(0));}
-				
-				if (response.equals("Wake up a student and converse.")){
+					cipher.askQuestion();
+					sidequestStart = cipher.answerQuestion(in.next().charAt(0));
+					}
+				if (response.equals("Wake up a student and converse.") && !wokenStudent){
+					wokenStudent = true;
 					c++;
 					player.addKnowledge(20);
 					System.out.println("You converse with the student and learn a bit about Truman's history. /n"
 							+ "Apparently Truman is famous for the squirrels around campus."); 
 				}
 			}
-			if (response.equals("Investigate bulletin board.") && !investigatedBulletinBoard){
-				
-				c++;
+			else if (response.equals("Investigate the bulletin board.") && !investigatedBulletinBoard){
 				System.out.println("Apparently, it's Humans vs. Zombies at Truman.... \n"
 						+ "The board also says something about a potato.");
 			}
-			if (response.equals("Take a seat before class.")){
+			else if (response.equals("Take a seat before class.")){
 				c = 3;
 				System.out.println("Class begins.");
 			}

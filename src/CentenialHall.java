@@ -29,7 +29,7 @@ public class CentenialHall {
 				System.out.println("Investigate the bathroom.");
 			}
 			if (!investigatedDesk) {
-				System.out.println("Investigate the desk.");
+				System.out.println("Investigate the desk."); //test
 			}
 			response = in.nextLine();
 			if (response.equals("Investigate the bed.") && !investigatedBed) {
