@@ -112,16 +112,22 @@ public class Outside {
 				System.out.println("The zombie has 'died.'");
 				player = loot(player);
 			}
-		//	if (zombie.getTurns() == 0 && zombie.getHealth() > 0) {
-				//ArrayList<Item> items = new ArrayList<Item>();
-			//	items = player.getInv();
-		//		int i = items.size() * (int) Math.random();
-				//if (i == items.size()) {
-					//i = i - 1;
-				//}
-				//player.removeItem(items.get(i));
-			//	System.out.println("The zombie reached you and stole your ");
-		//	}
+			if (zombie.getTurns() == 0 && zombie.getHealth() > 0) {
+				System.out.println("The zombie reached you and stole your ");
+				if (player.getBooks().size() > 0) {
+					int num = (int) (Math.random() * (float) player.getBooks().size());
+					System.out.println(player.getBooks().get(num));
+					player.removeTextbook(num);
+				}
+				else if (player.getFlash().size() > 0) {
+					System.out.println("flashdrive.");
+					int num = (int) (Math.random() * (float) player.getFlash().size());
+					player.removeFlashdrive(num);
+				}
+				else {
+					System.out.println("pride, since you have nothing else. Loser.");
+				}
+			}
 		}
 		return player;
 	}

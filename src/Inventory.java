@@ -25,16 +25,16 @@ public class Inventory {
 		textInv.add(book);
 	}
 	
-	public void remBook(Textbook book) {
-		textInv.remove(book);
+	public void remBook(int num) {
+		textInv.remove(num);
 	}
 	
 	public void addFlash(Flashdrive flash) {
 		flashInv.add(flash);
 	}
 	
-	public void remFlash(Flashdrive flash) {
-		flashInv.remove(flash);
+	public void remFlash(int num) {
+		flashInv.remove(num);
 	}
 	
 	public void addGun(NerfGun gun) {

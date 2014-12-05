@@ -130,7 +130,7 @@ public class Home {
 				System.out.println(tInv.get(num).getDesc());
 				System.out.println("You gain " + tInv.get(num).getKnowledge() + " knowledge.");
 				player.addKnowledge(tInv.get(num).getKnowledge());
-				player.removeTextbook(tInv.get(num));
+				player.removeTextbook(num);
 				tInv.remove(num);
 			}
 			else if (response.equals("Use flashdrive.")) {
@@ -139,7 +139,9 @@ public class Home {
 				for (Flashdrive flash : fInv) {
 					counter++;
 					knowledge = flash.getKnowledge() + knowledge;
-					player.removeFlashdrive(flash);
+				}
+				for (int i = fInv.size(); i <= 0; i--) {
+					player.removeFlashdrive(i);
 				}
 				System.out.println("You used " + counter + " flashdrives and gained " + knowledge + " knowledge.");
 				player.addKnowledge(knowledge);

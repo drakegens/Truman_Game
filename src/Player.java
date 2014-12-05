@@ -59,16 +59,16 @@ public class Player {
 		inv.addBook(item);
 	}
 
-	public void removeTextbook(Textbook item) {
-		inv.remBook(item);
+	public void removeTextbook(int num) {
+		inv.remBook(num);
 	}
 	
 	public void addFlashdrive(Flashdrive item) {
 		inv.addFlash(item);
 	}
 	
-	public void removeFlashdrive(Flashdrive item) {
-		inv.remFlash(item);
+	public void removeFlashdrive(int num) {
+		inv.remFlash(num);
 	}
 	
 	public void addGun(NerfGun gun) {
