@@ -39,7 +39,30 @@ public class Home extends Room {
 		return player;
 	}
 	
-	public Player firstNight(Player player) {
+	public Player secondDay(Player player) {
+		player = night(player);
+		System.out.println("You wake up in the morning. \n"
+				+ "You discover you have slept in. \n"
+				+ "You have class in 30 minutes. \n"
+				+ "You rush out the door after grabbing 10 more darts.");
+		player.changeDarts(10);
+		Outside encounter = new Outside();
+		player = encounter.encounter(player);
+		return player;
+	}
+	
+	public Player thirdDay(Player player) {
+		player = night(player);
+		System.out.println("You wake up and find that you have an hour left before class. \n"
+				+ "You eat a hearty breakfast and get ready for the day."
+				+ "As you leave, you grab 30 more darts.");
+		player.changeDarts(10);
+		Outside encounter = new Outside();
+		player = encounter.encounter(player);
+		return player;
+	}
+	
+	public Player night(Player player) {
 		System.out.println("You arrive at your home. You can...");
 		Scanner in = new Scanner(System.in);
 		String response;
@@ -57,8 +80,6 @@ public class Home extends Room {
 				sleep = true;
 			}
 		}
-		Outside encounter = new Outside();
-		player = encounter.encounter(player);
 		return player;
 	}
 	
@@ -83,9 +104,23 @@ public class Home extends Room {
 					i++;
 					System.out.println(i + ". " + book.getName());
 				}
+				int num = in.nextInt() - 1;
+				System.out.println(tInv.get(num).getDesc());
+				System.out.println("You gain " + tInv.get(num).getKnowledge() + " knowledge.");
+				player.addKnowledge(tInv.get(num).getKnowledge());
+				player.removeTextbook(tInv.get(num));
+				tInv.remove(num);
 			}
 			if (response.equals("Use flashdrive.")) {
-				
+				int counter = 0;
+				int knowledge = 0;
+				for (Flashdrive flash : fInv) {
+					counter++;
+					knowledge = flash.getKnowledge() + knowledge;
+					player.removeFlashdrive(flash);
+				}
+				System.out.println("You used " + counter + " flashdrives and gained " + knowledge + " knowledge.");
+				player.addKnowledge(knowledge);
 			}
 			if (response.equals("Stop studying.")) {
 				studying = false;

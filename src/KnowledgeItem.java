@@ -13,4 +13,7 @@ public class KnowledgeItem extends Item {
 		{this.knowledge = knowledge;}
 	}
 
+	public int getKnowledge() {
+		return knowledge;
+	}
 }
