@@ -14,7 +14,11 @@ public class Quest {
 	private static boolean fourthLecture = false;
 	private static boolean amuletOfYendor = false;
 	private static boolean day1 = true;
+	private static boolean day2 = true;
+	private static boolean day3 = true;
+	private static boolean day4 = true;
 	private static boolean visitedCH3251 = false;
+	private static boolean visitedMcClain = false;
 	
 	public static void main(String[] args) {
 		Player player = new Player();
@@ -40,6 +44,26 @@ public class Quest {
 			}
 			if (response.equals("Home")) {
 				player = home.secondDay(player);
+				day1 = false;
+			}
+		}
+		player = vh.secondLecture(player);
+		Mcclain mch = new Mcclain();
+		while (day2) {
+			System.out.println("Where do you want to go? You can go to... ");
+			if (ch.getFound() && !visitedMcClain) {
+				System.out.println("McClain Hall");
+			}
+			System.out.println("Home");
+			
+			response = in.nextLine();
+			if (response.equals("McClain Hall") && !visitedMcClain && ch.getFound()) {
+				//call player = mch.hall(player);
+				visitedMcClain = true;
+			}
+			if (response.equals("Home")) {
+				//call player = home.thirdDay(player);
+				day2 = false;
 			}
 		}
 	}

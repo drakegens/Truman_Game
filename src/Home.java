@@ -46,6 +46,8 @@ public class Home extends Room {
 				+ "You have class in 30 minutes. \n"
 				+ "You rush out the door after grabbing 10 more darts.");
 		player.changeDarts(10);
+		Outside encounter = new Outside();
+		player = encounter.encounter(player);
 		return player;
 	}
 	
