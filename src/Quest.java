@@ -68,6 +68,35 @@ public class Quest {
 			}
 		}
 		player = vh.thirdLecture(player);
+		while (day3) {
+			System.out.println("Where do you want to go? You can go to...");
+			System.out.println("Home");
+			
+			response = in.nextLine();
+			if (response.equals("Home")) {
+				player = home.fourthDay(player);
+				day3 = false;
+			}
+			else {
+				System.out.println("Invalid response");
+			}
+		}
+		player = vh.fourthLecture(player);
+		while (day4) {
+			System.out.println("Where do you want to go? You can go to...");
+			System.out.println("Home");
+			
+			response = in.nextLine();
+			if (response.equals("Home")) {
+				player = home.fifthDay(player);
+				day4 = false;
+			}
+			else {
+				System.out.println("Invalid response");
+			}
+		}
+		vh.finalExam(player);
+		
 	}
 
 }

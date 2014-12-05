@@ -63,6 +63,24 @@ public class Home {
 		return player;
 	}
 	
+	public Player fourthDay(Player player) {
+		player = night(player);
+		System.out.println("You had a rough night's sleep. \n"
+				+ "You feel as if you might fall asleep in class. \n"
+				+ "After a quick shower, though, you feel fine.");
+		Outside encounter = new Outside();
+		player = encounter.encounter(player);
+		return player;
+	}
+	
+	public Player fifthDay(Player player) {
+		player = night(player);
+		System.out.println("You get ready to take the finals.");
+		Outside encounter = new Outside();
+		player = encounter.encounter(player);
+		return player;
+	}
+	
 	public Player night(Player player) {
 		System.out.println("You arrive at your home. You can...");
 		Scanner in = new Scanner(System.in);
