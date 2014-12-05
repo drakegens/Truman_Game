@@ -106,6 +106,7 @@ public class Outside {
 			}
 			else {
 				System.out.println("Invalid response.");
+				zombie.changeTurns(-1);
 			}
 			if (zombie.getHealth() <= 0) {
 				System.out.println("The zombie has 'died.'");
