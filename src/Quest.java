@@ -58,11 +58,11 @@ public class Quest {
 			
 			response = in.nextLine();
 			if (response.equals("McClain Hall") && !visitedMcClain && ch.getFound()) {
-				//call player = mch.hall(player);
+				player = mch.hall(player);
 				visitedMcClain = true;
 			}
 			if (response.equals("Home")) {
-				//call player = home.thirdDay(player);
+				player = home.thirdDay(player);
 				day2 = false;
 			}
 		}

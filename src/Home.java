@@ -51,6 +51,17 @@ public class Home extends Room {
 		return player;
 	}
 	
+	public Player thirdDay(Player player) {
+		player = night(player);
+		System.out.println("You wake up and find that you have an hour left before class. \n"
+				+ "You eat a hearty breakfast and get ready for the day."
+				+ "As you leave, you grab 30 more darts.");
+		player.changeDarts(10);
+		Outside encounter = new Outside();
+		player = encounter.encounter(player);
+		return player;
+	}
+	
 	public Player night(Player player) {
 		System.out.println("You arrive at your home. You can...");
 		Scanner in = new Scanner(System.in);
