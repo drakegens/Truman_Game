@@ -42,19 +42,19 @@ public class Mcclain {
 				System.out.println("You notice that the three pictures from right to left are: \n"
 						+ "McClain Hall, Violet Hall, Centennial Hall.");
 			}
-			if (nearPictures) {
+			else if (nearPictures) {
 				if (response.equals("Leave pictures.")) {
 					nearPictures = false;
 					System.out.println("You leave the pictures alone.");
 				}
-				if (inspectedPotato) {
+				else if (inspectedPotato) {
 					if (response.equals("Put the potato under the picture of McClain.")) {
 						System.out.println("The potato shimmers, then disappears. \n"
 								+ "Moments later, it reappears near where it first was. \n"
 								+ "You get the feeling it didn't belong there.");
 						inspectedPotato = false;
 					}
-					if (response.equals("Put the potato under the picture of Violet.")) {
+					else if (response.equals("Put the potato under the picture of Violet.")) {
 						found = true;
 						System.out.println("The potato shines brightly, then sinks into the ground. \n"
 								+ "Moments later, you find yourself staring at an amulet in the hole the potato left. \n"
@@ -62,26 +62,35 @@ public class Mcclain {
 								+ "You feel as if this amulet would return to this place after using it. \n"
 								+ "You suddenly find yourself staring at empty space. You decide to leave.");
 					}
-					if (response.equals("Put the potato under the picture of Centennial.")) {
+					else if (response.equals("Put the potato under the picture of Centennial.")) {
 						System.out.println("The potato shimmers, then disappears. \n"
 								+ "Moments later, it reappears near where it first was. \n"
 								+ "You get the feeling it didn't belong there.");
 						inspectedPotato = false;						
 					}
+					else {
+						System.out.println("Invalid response.");
+					}
 				}
-				if (!inspectedPotato) {
+				else if (!inspectedPotato) {
 					if (response.equals("Touch the picture of McClain.")) {
 						System.out.println("You suddenly feel foolish, as if what you just did was pointless.");
 					}
-					if (response.equals("Touch the picture of Violet.")) {
+					else if (response.equals("Touch the picture of Violet.")) {
 						System.out.println("You suddenly feel foolish, as if what you just did was pointless.");						
 					}
-					if (response.equals("Touch the picture of Centennial.")) {
+					else if (response.equals("Touch the picture of Centennial.")) {
 						System.out.println("You suddenly feel foolish, as if what you just did was pointless.");
 					}
+					else {
+						System.out.println("Invalid response.");
+					}
+				}
+				else {
+					System.out.println("Invalid response.");
 				}
 			}
-			if (!inspectedPotato && response.equals("Approach the potato.")) {
+			else if (!inspectedPotato && response.equals("Approach the potato.")) {
 				inspectedPotato = true;
 				System.out.println("The potato shines as you approach it. \n"
 						+ "You pick up the potato. \n"

@@ -76,9 +76,12 @@ public class Home extends Room {
 			if (response.equals("Study.")) {
 				player = study(player);
 			}
-			if (response.equals("Go to sleep.")) {
+			else if (response.equals("Go to sleep.")) {
 				System.out.println("You turn in for the night.");
 				sleep = true;
+			}
+			else {
+				System.out.println("Invalid response.");
 			}
 		}
 		return player;
@@ -112,7 +115,7 @@ public class Home extends Room {
 				player.removeTextbook(tInv.get(num));
 				tInv.remove(num);
 			}
-			if (response.equals("Use flashdrive.")) {
+			else if (response.equals("Use flashdrive.")) {
 				int counter = 0;
 				int knowledge = 0;
 				for (Flashdrive flash : fInv) {
@@ -123,8 +126,11 @@ public class Home extends Room {
 				System.out.println("You used " + counter + " flashdrives and gained " + knowledge + " knowledge.");
 				player.addKnowledge(knowledge);
 			}
-			if (response.equals("Stop studying.")) {
+			else if (response.equals("Stop studying.")) {
 				studying = false;
+			}
+			else {
+				System.out.println("Invalid response.");
 			}
 		}
 		

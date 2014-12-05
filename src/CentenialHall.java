@@ -29,8 +29,9 @@ public class CentenialHall {
 				System.out.println("Investigate the bathroom.");
 			}
 			if (!investigatedDesk) {
-				System.out.println("Investigate the desk."); //test
+				System.out.println("Investigate the desk.");
 			}
+			
 			response = in.nextLine();
 			if (response.equals("Investigate the bed.") && !investigatedBed) {
 				System.out.println("The bed is old. It's barely a thin piece of cloth. Underneath the cloth you find an old, outdated textbook.\n"
@@ -39,21 +40,21 @@ public class CentenialHall {
 				player.addTextbook(textbook);
 				investigatedBed = true;
 			}
-			if (response.equals("Investigate the closet") && !investigatedCloset) {
+			else if (response.equals("Investigate the closet") && !investigatedCloset) {
 				System.out.println("This closet is old and musty. Within it you find a nerf shotgun. \n"
 						+ "How this arrived here, no one will ever know.");
 				NerfGun nerfShotGun = new NerfGun("Nerf Shotgun, has 3 accuracy and 50 power", "Nerf Shotgun", 7, 20);
 				player.addGun(nerfShotGun);
 				investigatedCloset = true;
 			}
-			if (response.equals("Investigate the bathroom.") && !investigatedBathroom) {
+			else if (response.equals("Investigate the bathroom.") && !investigatedBathroom) {
 				System.out.println("You open the bathroom door. You find that the bathroom is utterly unremarkable in every way. \n"
 						+ "However, when you open the medicine cabinet, you find somebody had stashed some nerf darts there. \n"
 						+ "Why anybody would put nerf darts in the medicine cabinet, you can only guess. \n"
 						+ "You find 10 darts.");
 				player.changeDarts(10);
 			}
-			if (response.equals("Investigate the desk.") && !investigatedDesk) {
+			else if (response.equals("Investigate the desk.") && !investigatedDesk) {
 				System.out.println("As you approach the desk, your mind is filled with an image of a potato buried near Violet Hall. \n"
 						+ "You get the distinct feeling that the potato is no longer there, but that many saw it as a good luck charm. \n"
 						+ "You find a message that says: \n"
@@ -61,6 +62,9 @@ public class CentenialHall {
 						+ "All I need to do is visit McClain on the eve of the third lecture! \n"
 						+ "Yendor's splendor will be revealed to me!");
 				found = true;
+			}
+			else {
+				System.out.println("Invalid response.");
 			}
 		}
 		System.out.println("You blink and find yourself staring at an empty hallway in Centennial Hall. You decide to leave.");

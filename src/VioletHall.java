@@ -137,6 +137,7 @@ public class VioletHall {
     		   System.out.println("Investigate the bulletin board.");
     	   }
     	   System.out.println("Take a seat before class.");
+    	   
     	   response = in.nextLine();
     	   if (response.equals("Investigate the students.") && !investigateStudents){
     		   investigateStudents = true;
@@ -147,7 +148,7 @@ public class VioletHall {
     		   t++;
     		   
     	   }
-    	   if (response.equals("Investigate the bulletin board.") && !investigateBulletinBoard){
+    	   else if (response.equals("Investigate the bulletin board.") && !investigateBulletinBoard){
     		   investigateBulletinBoard = true;
     		   System.out.println("The bulletin board contains lot of useful information. /n"
     				   + "It states that the president of the University's name is Dr. Troy Paino, /n"
@@ -155,7 +156,7 @@ public class VioletHall {
     		   player.addKnowledge(20);
     		   t++;
     	   }
-    	   if (response.equals("Take a seat before class.")){
+    	   else if (response.equals("Take a seat before class.")){
     		   t++;
     		   System.out.println("Class begins");
     	   }
@@ -172,61 +173,61 @@ public class VioletHall {
 		boolean worksheet = false;
 		boolean studentConv = false;
 		boolean flash = false;
-System.out.println("Player enters another class taught by Dr. Neitzke, /n" +
-	"It seems like he teaches every class the player has. /n"
-		+ "You have time to do two things before class.");
-String response;
-Scanner in = new Scanner(System.in);
-int t = 0;
-while (t < 2){
-	System.out.println("You decide to...");
-if (!worksheet){
-	System.out.println("Investigate the worksheet");
-}
-if (!studentConv){
-	System.out.println("Talk to a student");
-}
-if (!flash){
-	System.out.println("Pick up flashdrive.");
-}
-System.out.println("Take a seat before class.");
-response = in.nextLine();
+		System.out.println("Player enters another class taught by Dr. Neitzke, /n" +
+				"It seems like he teaches every class the player has. /n"
+				+ "You have time to do two things before class.");
+		String response;
+		Scanner in = new Scanner(System.in);
+		int t = 0;
+		while (t < 2){
+			System.out.println("You decide to...");
+			if (!worksheet){
+				System.out.println("Investigate the worksheet");
+			}
+			if (!studentConv){
+				System.out.println("Talk to a student");
+			}
+			if (!flash){
+				System.out.println("Pick up flashdrive.");
+			}
+			System.out.println("Take a seat before class.");
+			response = in.nextLine();
 
-if (response.equals("Investigate the worksheet") && !worksheet){
-	worksheet = true;
-	System.out.println("The player reads a question off of the worksheet.");
-	MultipleChoice q = new MultipleChoice("How many residence halls are on the Truman campus?","6","7","3","99", 'b');
-	q.askQuestion();
-	boolean answer = q.answerQuestion(in.next().charAt(0));
-	if (answer){player.addKnowledge(20);}
-	t++;
-}
-if (response.equals("Talk to a student") && !studentConv){
-	studentConv = true;
-	System.out.println("The player converses with a student and he tells you /n"
-			+ "that the first name of Truman State University was /n"
-			+ "North Missouri Normal School");
-	player.addKnowledge(20);
-	t++;
-}
-if (response.equals("Pick up flashdrive") && !flash){
-	flash = true;
-	Flashdrive flashdrive = new Flashdrive("flashdrive", 20);
-	player.addFlashdrive(flashdrive);
-	System.out.println("You picked up a flashdrive filled with... something.");
-}
-if (response.equals("Take a seat before class")){
-	t = 2;
-	System.out.println("Class begins");
-}
-else {invalidResponse();}
+			if (response.equals("Investigate the worksheet") && !worksheet){
+				worksheet = true;
+				System.out.println("The player reads a question off of the worksheet.");
+				MultipleChoice q = new MultipleChoice("How many residence halls are on the Truman campus?","6","7","3","99", 'b');
+				q.askQuestion();
+				boolean answer = q.answerQuestion(in.next().charAt(0));
+				if (answer){player.addKnowledge(20);}
+				t++;
+			}
+			else if (response.equals("Talk to a student") && !studentConv){
+				studentConv = true;
+				System.out.println("The player converses with a student and he tells you /n"	
+						+ "that the first name of Truman State University was /n"
+						+ "North Missouri Normal School");
+				player.addKnowledge(20);
+				t++;
+			}
+			else if (response.equals("Pick up flashdrive") && !flash){
+				flash = true;
+				Flashdrive flashdrive = new Flashdrive("flashdrive", 20);
+				player.addFlashdrive(flashdrive);
+				System.out.println("You picked up a flashdrive filled with... something.");
+			}
+			else if (response.equals("Take a seat before class")){
+				t = 2;
+				System.out.println("Class begins");
+			}
+			else {invalidResponse();}
 
 
-}
-in.close();
-Outside encounter = new Outside();
-player = encounter.encounter(player);
-return player;
+		}
+		in.close();
+		Outside encounter = new Outside();
+		player = encounter.encounter(player);
+		return player;
 	}
 	
 	public Player fourthLecture(Player player) {
@@ -237,27 +238,28 @@ return player;
 		String response;
 		boolean valid = false;
 		while (!valid){
-		System.out.println("You decide to...");
+			System.out.println("You decide to...");
 		
-	System.out.println("Speak to Dr. Neitzke.");
+			System.out.println("Speak to Dr. Neitzke.");
 	
 	
-	System.out.println("Take a seat and ignore.");
-	response = in.nextLine();
-	if (response.equals("Speak to Dr. Neitzke.")){
-		System.out.println("Dr. Neitzke informs you that have recieved extra credit /n"
-				+ "for being so diligent by always showing up for class. /n"
-				+ "Extra credit is received and Dr. Neitzke informs you that /n"
-				+ "if you want to marry your significant other, you should kiss them /n"
-				+ "in the Sunken Garden. Class begins.");
-		player.addKnowledge(20); valid = true;
-	}
-	if (response.equals("Take a seat and ignore.")){
-		System.out.println("You sit down and class begins. It feels like Dr. Neitzke wanted to give you something.");
-		valid = true;
-	}
-	else {invalidResponse();}
-	}
+			System.out.println("Take a seat and ignore.");
+			
+			response = in.nextLine();
+			if (response.equals("Speak to Dr. Neitzke.")){
+				System.out.println("Dr. Neitzke informs you that have recieved extra credit /n"
+						+ "for being so diligent by always showing up for class. /n"
+						+ "Extra credit is received and Dr. Neitzke informs you that /n"
+						+ "if you want to marry your significant other, you should kiss them /n"
+						+ "in the Sunken Garden. Class begins.");
+				player.addKnowledge(20); valid = true;
+			}
+			else if (response.equals("Take a seat and ignore.")){
+				System.out.println("You sit down and class begins. It feels like Dr. Neitzke wanted to give you something.");
+				valid = true;
+			}
+			else {invalidResponse();}
+		}
 		in.close();
 		Outside encounter = new Outside();
 		player = encounter.encounter(player);
@@ -281,7 +283,7 @@ return player;
 			if (player.amuletWon()){System.out.println("The amulet indicates the answer is false.");}
 			response = in.nextLine();
 			if (response.equals("T")){System.out.println("Incorrect.");valid = true;}
-			if (response.equals("F")){System.out.println("Correct."); score++; valid = true;}
+			else if (response.equals("F")){System.out.println("Correct."); score++; valid = true;}
 			else {invalidResponse();}
 		}
 		valid = false;
@@ -290,28 +292,28 @@ return player;
 			if (player.amuletWon()){System.out.println("The amulet indicates the answer is true.");}
 			response = in.nextLine();
 			if (response.equals("T")){System.out.println("Correct.");valid = true;score++;}
-			if (response.equals("F")){System.out.println("Incorrect.");  valid = true;}
+			else if (response.equals("F")){System.out.println("Incorrect.");  valid = true;}
 			else {invalidResponse();}
 		}
 		valid = false;
 		MultipleChoice prison = new MultipleChoice("Third question: Which hall is designed similarly to a prison? ", "MO", "Ryle", "C-Hall", "Violette", 'a');
-	if (player.amuletWon()){System.out.println("The amulet tells you MO is the answer.");}
+		if (player.amuletWon()){System.out.println("The amulet tells you MO is the answer.");}
 		prison.askQuestion();
 	
-	boolean a = prison.answerQuestion(in.next().charAt(0));
-	if (a) {score++; System.out.println("Correct.");}
-	else {System.out.println("Incorrect.");}
+		boolean a = prison.answerQuestion(in.next().charAt(0));
+		if (a) {score++; System.out.println("Correct.");}
+		else {System.out.println("Incorrect.");}
 	 
-	MultipleChoice colors = new MultipleChoice("Last question: The Truman school colors are: ", "gold-blue", "purple-black", "purple-white", "white-black", 'c');
-	if (player.amuletWon()){System.out.println("The amulet tells you the colors are purple and white");}
-	colors.askQuestion();
-	a = colors.answerQuestion(in.next().charAt(0));
-	if (a) {score++; System.out.println("Correct.");}
-	else {System.out.println("Incorrect.");}
+		MultipleChoice colors = new MultipleChoice("Last question: The Truman school colors are: ", "gold-blue", "purple-black", "purple-white", "white-black", 'c');
+		if (player.amuletWon()){System.out.println("The amulet tells you the colors are purple and white");}
+		colors.askQuestion();
+		a = colors.answerQuestion(in.next().charAt(0));
+		if (a) {score++; System.out.println("Correct.");}
+		else {System.out.println("Incorrect.");}
 	
-	in.close();
-	if (score >= 3){System.out.println("You have passed the final and won the game. Did the amulet of Yendor help you?");}
-	else {System.out.println("You have failed the final and lost the game. Maybe you should try again and look for a certain amulet.");}
+		in.close();
+		if (score >= 3){System.out.println("You have passed the final and won the game. Did the amulet of Yendor help you?");}
+		else {System.out.println("You have failed the final and lost the game. Maybe you should try again and look for a certain amulet.");}
 	}
 	
 	public void invalidResponse(){

@@ -8,10 +8,6 @@ import java.util.Scanner;
  */
 public class Quest {
 
-	private static boolean firstLecture = false;
-	private static boolean secondLecture = false;
-	private static boolean thirdLecture = false;
-	private static boolean fourthLecture = false;
 	private static boolean amuletOfYendor = false;
 	private static boolean day1 = true;
 	private static boolean day2 = true;
@@ -26,7 +22,6 @@ public class Quest {
 		player = home.start(player);
 		VioletHall vh = new VioletHall();
 		player = vh.firstLecture(player);
-		firstLecture = true;
 		String response;
 		Scanner in = new Scanner(System.in);
 		CentenialHall ch = new CentenialHall();
@@ -42,9 +37,12 @@ public class Quest {
 				visitedCH3251 = true;
 				ch.room3251(player);
 			}
-			if (response.equals("Home")) {
+			else if (response.equals("Home")) {
 				player = home.secondDay(player);
 				day1 = false;
+			}
+			else {
+				System.out.println("Invalid response.");
 			}
 		}
 		player = vh.secondLecture(player);
@@ -61,21 +59,16 @@ public class Quest {
 				player = mch.hall(player);
 				visitedMcClain = true;
 			}
-			if (response.equals("Home")) {
+			else if (response.equals("Home")) {
 				player = home.thirdDay(player);
 				day2 = false;
 			}
+			else {
+				System.out.println("Invalid response.");
+			}
 		}
+		player = vh.thirdLecture(player);
 	}
-	
-	public void setSecondLecture(){
-		secondLecture = true;
-	}
-	public void setThirdLecture(){
-		thirdLecture = true;
-	}
-	public void setFourthLecture(){
-		fourthLecture = true;
-	}
+
 }
 
